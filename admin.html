@@ -1,0 +1,23 @@
+<script>
+  // Redirect unauthorized access
+  if (localStorage.getItem("isAdmin") !== "true") {
+    window.location.href = "login.html";
+  }
+
+  // Load feedback
+  const feedbackList = JSON.parse(localStorage.getItem('feedbackList')) || [];
+  const tableBody = document.getElementById('feedbackTable');
+
+  if (feedbackList.length === 0) {
+    tableBody.innerHTML = "<tr><td colspan='3' class='text-center text-muted'>No feedback found</td></tr>";
+  } else {
+    feedbackList.forEach((entry, index) => {
+      const row = `<tr>
+                    <td>${index + 1}</td>
+                    <td>${entry.user}</td>
+                    <td>${entry.feedback}</td>
+                  </tr>`;
+      tableBody.innerHTML += row;
+    });
+  }
+</script>
