@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Feedback Form</title>
+  <title>Feedback Collection</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    h2 { color: #333; }
+    #feedbackList { margin-top: 20px; border-top: 1px solid #ccc; padding-top: 10px; }
+    .feedback-item { background: #f9f9f9; margin: 5px 0; padding: 10px; border-radius: 5px; }
+  </style>
 </head>
 <body>
-  <h2>Feedback Form</h2>
-  <form>
-    <label>Name:</label><br />
-    <input type="text" placeholder="Enter your name" /><br /><br />
-    
-    <label>Feedback:</label><br />
-    <textarea placeholder="Write your feedback here..."></textarea><br /><br />
-    
+  <h2>Submit Your Feedback</h2>
+
+  <form id="feedbackForm">
+    <input type="text" name="user" placeholder="Enter your name" required />
+    <textarea name="feedback" placeholder="Enter your feedback" required></textarea>
     <button type="submit">Submit</button>
   </form>
-</body>
-</html>
+
+  <div id="feedbackList">
+    <h3>Feedbacks:</h3>
+  </div>
+
+  <script src="feedba
